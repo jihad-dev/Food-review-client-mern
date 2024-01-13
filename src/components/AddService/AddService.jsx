@@ -1,12 +1,11 @@
 import React, { useState } from "react";
+import toast from "react-hot-toast";
 
 const AddService = () => {
   const [image, setImage] = useState(null);
-  const handleFileInputChange = (event) => {
-    const file = event.target.files[0];
-    setImage(file);
-  };
   const imageHostKey = process.env.REACT_APP_imagbb_key;
+
+
   const handleAddServices = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -18,7 +17,7 @@ const AddService = () => {
     const serviceReview = form.review.value;
     const formData = new FormData();
     formData.append("image", imageUrl);
-    const url = `https://api.imgbb.com/1/upload?expiration=600&key=${imageHostKey}`;
+    const url = `https://api.imgbb.com/1/upload?key=${imageHostKey}`;
     fetch(url, {
       method: "POST",
       body: formData,
@@ -43,8 +42,9 @@ const AddService = () => {
             .then((res) => res.json())
             .then((data) => {
               console.log(data);
-              if (data.acknowledged) {
-                alert("service added successfully");
+              if (data.acknowledged > 0) {
+                toast.success("service added successfully");
+                // alert("service added successfully");
               }
             });
         }
@@ -56,6 +56,9 @@ const AddService = () => {
         <div className="">
           <div className="card w-[600px]  shadow-2xl bg-base-100">
             <form onSubmit={handleAddServices} className="card-body">
+              {/* image input field  choice image  */}
+
+
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Enter Image</span>
@@ -64,9 +67,11 @@ const AddService = () => {
                   type="file"
                   placeholder="Enter image"
                   className="input input-bordered"
-                  onChange={handleFileInputChange}
+                  onChange={(e) => setImage(e.target.files[0])}
                 />
               </div>
+
+
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Service Name</span>

@@ -13,6 +13,7 @@ const Details = () => {
     const email = user?.email;
     const photoURL = user?.photoURL;
     const photo = form.photo.value;
+    console.log('photo',photo)
     const reviewData ={
       serviceId:_id,
       serviceName: serviceName,
