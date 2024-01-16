@@ -8,7 +8,7 @@ const MyReview = () => {
   const { user } = useContext(AuthContext);
   const [reviews, setReviews] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/reviews?email=${user?.email}`)
+    fetch(`https://food-review-server-k702lwf7o-mdjihadislam166.vercel.app/reviews?email=${user?.email}`)
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, [user?.email]);
@@ -17,7 +17,7 @@ const MyReview = () => {
     const proceed = window.confirm("Are you sure you want to delete");
 
     if (proceed) {
-      fetch(`http://localhost:5000/reviews/${id}`, {
+      fetch(`https://food-review-server-k702lwf7o-mdjihadislam166.vercel.app/reviews/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())

@@ -32,7 +32,7 @@ const AddService = () => {
             price,
             serviceReview,
           };
-          fetch("http://localhost:5000/services", {
+          fetch("https://food-review-server-k702lwf7o-mdjihadislam166.vercel.app/services", {
             method: "POST",
             headers: {
               "content-type": "application/json",
