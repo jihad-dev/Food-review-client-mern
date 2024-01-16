@@ -12,11 +12,10 @@ const Header = () => {
 
   const handleLogOut = () => {
     logOut()
-      .then(() => {})
-      .catch((err) => {
-        console.log(err);
-      });
-  };
+    .then(()=>{})
+    .catch(()=>{})
+   
+  }
 
   const navLinks = [
     <>
@@ -45,7 +44,7 @@ const Header = () => {
         <li><Link to='/add-service'>Add Service</Link></li>
       }
       {user ? (
-        <Link onClick={handleLogOut}>sign out</Link>
+        <Link to='/login' onClick={handleLogOut}>sign out</Link>
       ) : (
         <li>
           <Link to="/login">Login</Link>
@@ -61,7 +60,7 @@ const Header = () => {
           <div>
             <Link to="/">
               <img
-                className="w-16 h-14"
+                className="w-16 h-14 rounded-lg outline-none "
                 src="https://png.pngtree.com/png-clipart/20220705/original/pngtree-fast-food-logo-png-image_8330083.png"
                 alt=""
               />
@@ -69,7 +68,7 @@ const Header = () => {
           </div>
           {/* navlinks */}
           <div className="hidden md:block">
-            <div className="mr-3 flex items-baseline space-x-4 text-white">
+            <div  className="mr-3 flex items-baseline space-x-4 text-white">
               {navLinks}
             </div>
           </div>

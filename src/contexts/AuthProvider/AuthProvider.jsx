@@ -30,8 +30,7 @@ const AuthProvider = ({ children }) => {
     return signInWithPopup(auth, provider);
   };
   const logOut = () => {
-    
-    signOut(auth);
+    return signOut(auth);
   };
 
   useEffect(() => {

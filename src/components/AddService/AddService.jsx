@@ -41,7 +41,7 @@ const AddService = () => {
           })
             .then((res) => res.json())
             .then((data) => {
-              console.log(data);
+              // console.log(data);
               if (data.acknowledged > 0) {
                 toast.success("service added successfully");
                 // alert("service added successfully");

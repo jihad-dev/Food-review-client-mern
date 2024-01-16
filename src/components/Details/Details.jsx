@@ -11,18 +11,17 @@ const Details = () => {
     const form = event.target;
     const name = form.name.value;
     const email = user?.email;
-    const photoURL = user?.photoURL;
-    const photo = form.photo.value;
-    console.log('photo',photo)
+    // const photoURL = user?.photoURL;
+    // const photo = form.photo.value;
     const reviewData ={
       serviceId:_id,
       serviceName: serviceName,
       name: name,
       email: email,
-      photoURL: photoURL,
-      photo: photo
+      // photoURL: photoURL,
+      // photo: photo
     }
-console.log(reviewData)
+// console.log(reviewData)
       fetch('http://localhost:5000/reviews',{
         method: 'POST',
         headers:{
