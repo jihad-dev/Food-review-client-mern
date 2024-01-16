@@ -38,13 +38,13 @@ export const router = createBrowserRouter([
       {
         path: '/services',
         element:<AllService></AllService>,
-        loader:  () => fetch('https://food-review-server-k702lwf7o-mdjihadislam166.vercel.app/services')
+        loader:  () => fetch('https://food-review-server-mern.vercel.app/services')
          
       },
       {
         path:"/details/:id",
         element:<Details></Details>,
-        loader: ({params}) => fetch(`https://food-review-server-k702lwf7o-mdjihadislam166.vercel.app/services/${params.id}`)
+        loader: ({params}) => fetch(`https://food-review-server-mern.vercel.app/services/${params.id}`)
       },
       {
         path:'/blogs',
@@ -62,7 +62,7 @@ export const router = createBrowserRouter([
       {
         path:'/update-review/:id',
         element:<PrivateRoute><UpdateReview></UpdateReview></PrivateRoute>,
-        loader: async ({params}) => fetch(`https://food-review-server-k702lwf7o-mdjihadislam166.vercel.app/reviews/${params.id}`)
+        loader: async ({params}) => fetch(`https://food-review-server-mern.vercel.app/reviews/${params.id}`)
       }
     ],
   },

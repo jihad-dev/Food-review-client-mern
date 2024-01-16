@@ -12,7 +12,7 @@ const UpdateReview = () => {
       name: name,
     }
     // console.log(updateData);
-    fetch(`https://food-review-server-k702lwf7o-mdjihadislam166.vercel.app/reviews/${updateReview._id}`,{
+    fetch(`https://food-review-server-mern.vercel.app/reviews/${updateReview._id}`,{
       method:'PUT',
       headers:{
         'content-type': 'application/json',
