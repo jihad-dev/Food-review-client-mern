@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import SocialLogin from "../../Shared/SocialLogin/SocialLogin";
 import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
+import { setAuthToken } from "../../hooks/JwtAuth";
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);
@@ -15,7 +16,7 @@ const Register = () => {
     createUser(email, password)
       .then((result) => {
         const user = result.user;
-        // console.log(user);
+    setAuthToken(user)
         alert('user registration successfully')
       })
       .catch((err) => {

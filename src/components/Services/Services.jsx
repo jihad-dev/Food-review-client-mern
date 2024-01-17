@@ -10,7 +10,7 @@ const Services = () => {
  
 
   useEffect(() => {
-    fetch("https://food-review-server-mern.vercel.app/services")
+    fetch("https://food-review-server-zeta.vercel.app/services")
       .then((res) => res.json())
       .then((data) => {
         setServices(data);

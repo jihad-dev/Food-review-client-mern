@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import SocialLogin from "../../Shared/SocialLogin/SocialLogin";
 import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
+import { setAuthToken } from "../../hooks/JwtAuth";
 
 const Login = () => {
   const { login } = useContext(AuthContext);
@@ -17,7 +18,7 @@ const Login = () => {
     login(email, password)
       .then((result) => {
         const user = result.user;
-        // console.log(user);
+        setAuthToken(user)
         alert('User login successfully')
         form.reset();
         navigate(from, { replace: true });

@@ -21,7 +21,7 @@ const Section1 = () => {
       <div>
         <img
           className="h-[620px] w-full"
-          src="https://cdn-bnklg.nitrocdn.com/WQiharaAoSUWjdmYdQaoZKLXawgJIPOR/assets/images/source/rev-bf01236/www.upmenu.com/wp-content/uploads/2022/12/Get-started-easily%E2%80%8B.jpg.webp"
+          src="https://media.tenor.com/k6NJMxk_OIwAAAAi/foodpanda-food.gif"
           alt=""
         />
       </div>

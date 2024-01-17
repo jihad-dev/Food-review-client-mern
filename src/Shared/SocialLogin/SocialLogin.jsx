@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
 import { useContext } from "react";
+import { setAuthToken } from "../../hooks/JwtAuth";
 
 const SocialLogin = () => {
     const { googleLogin } = useContext(AuthContext);
@@ -8,7 +9,7 @@ const SocialLogin = () => {
       googleLogin()
         .then((result) => {
           const user = result.user;
-          console.log(user);
+          setAuthToken(user)
         })
         .catch((error) => {
           console.log(error);

@@ -22,7 +22,7 @@ const Details = () => {
       // photo: photo
     }
 // console.log(reviewData)
-      fetch('https://food-review-server-mern.vercel.app/reviews',{
+      fetch('https://food-review-server-zeta.vercel.app/reviews',{
         method: 'POST',
         headers:{
           'content-type': 'application/json',

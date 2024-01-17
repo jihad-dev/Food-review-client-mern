@@ -32,7 +32,7 @@ const AddService = () => {
             price,
             serviceReview,
           };
-          fetch("https://food-review-server-mern.vercel.app/services", {
+          fetch("https://food-review-server-zeta.vercel.app/services", {
             method: "POST",
             headers: {
               "content-type": "application/json",
